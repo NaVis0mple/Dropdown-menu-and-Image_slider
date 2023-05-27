@@ -1,42 +1,51 @@
+html {
+    box-sizing: border-box;
+}
+
 nav {
-    background-color: lightsalmon;
-    display: inline-block;
-    position: relative;
+    background-color: #e5e7eb;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: visible;
 }
 
 .start {
-    padding: 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: relative;
+    border: 1px solid black;
+    border-right-width: 0px;
 }
 
 .togglePart {
     visibility: hidden;
     /* display: none;  display can not transition; */
     position: absolute;
-    width: 100px;
+    /* this is good  */
+    width: 100%;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-
+    z-index: 5;
 }
 
-.start:hover+.togglePart,
+.start:hover .togglePart,
 .togglePart:hover {
     visibility: visible;
-    /* display: block; */
     opacity: 1;
 }
 
 .gridcontainer {
     display: grid;
-    grid-template-rows: repeat(5, 50px);
-    background-color: lightslategray;
+    grid-template-rows: repeat(5, 20px);
+    background-color: #e5e7eb;
 }
 
 .item {
-    border: 1px white solid;
+    border: 1px #d1d5db solid;
 }
 
 .item:hover {
-    background-color: darkgray;
+    background-color: #9ca3af;
     transition: background-color 0.3s ease-in-out;
 }
 

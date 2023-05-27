@@ -1,5 +1,6 @@
+const nav = document.createElement('nav')
 function createDropDownMenu () {
-    const nav = document.createElement('nav')
+    
     
     const start = document.createElement('div')
     start.classList.add('start')
@@ -8,7 +9,7 @@ function createDropDownMenu () {
 
     const togglepart = document.createElement('div')
     togglepart.classList.add('togglePart')
-    nav.appendChild(togglepart)
+    start.appendChild(togglepart)
 
     
     const gridcontainer = document.createElement('div')
@@ -22,6 +23,22 @@ function createDropDownMenu () {
         gridcontainer.appendChild(createitem)    
 
     })
-    document.querySelector('.try').appendChild(nav)
+    
 }
 createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+createDropDownMenu()
+document.querySelector('.try').appendChild(nav)
