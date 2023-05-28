@@ -50,3 +50,11 @@ nav {
 }
 
 /* slider */
+img {
+    height: 400px;
+    width: 400px;
+}
+
+.hide {
+    visibility: hidden;
+}
