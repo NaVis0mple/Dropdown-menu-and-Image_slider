@@ -53,8 +53,30 @@ nav {
 img {
     height: 400px;
     width: 400px;
+    position: absolute;
+    z-index: 1;
 }
 
 .hide {
     visibility: hidden;
+}
+
+.frame {
+    display: block;
+    position: relative;
+}
+
+.imgholder {
+    display: block;
+    position: relative;
+}
+
+.changepic {
+    z-index: 1000;
+    position: absolute;
+    top: 400px;
+}
+
+.forward {
+    left: 380px;
 }
