@@ -24,7 +24,7 @@ nav {
     /* this is good  */
     width: 100%;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 1s ease-in-out;
     z-index: 5;
 }
 
@@ -32,6 +32,7 @@ nav {
 .togglePart:hover {
     visibility: visible;
     opacity: 1;
+
 }
 
 .gridcontainer {
@@ -50,15 +51,18 @@ nav {
 }
 
 /* slider */
-img {
+/* first try */
+/* img {
     height: 400px;
     width: 400px;
     position: absolute;
     z-index: 1;
+    opacity: 1;
 }
 
 .hide {
     visibility: hidden;
+
 }
 
 .frame {
@@ -79,4 +83,47 @@ img {
 
 .forward {
     left: 380px;
+} */
+
+/* second try without js */
+.bigholder {
+    position: relative;
+    margin: 0 auto;
+}
+
+.imgholder {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.imgholder img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.navbutton {
+    display: flex;
+    column-gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+a {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #9ca3af;
+    opacity: 75%;
+    transition: opacity ease 500ms;
+}
+
+a:hover {
+    opacity: 1;
 }
