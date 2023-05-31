@@ -100,5 +100,20 @@ document.querySelector('.try').appendChild(nav)
 // buttonBackward.addEventListener('click',()=>{
 //     changePicBack()
 // })
+const anchor = document.querySelectorAll('a')
+anchor.forEach(a=>{
+    
+    a.addEventListener('click',()=>{
+        setTimeout(() => {
+            const hash = document.location.hash
+            console.log(hash) 
+        }, 0);  
+        anchor.forEach(other=>{
+            if(other!==a){
+                other.style.backgroundColor= ''
+            }
+        })
+        a.style.backgroundColor = 'black'
+    })
 
-const match = 
+})
