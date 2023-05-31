@@ -127,3 +127,12 @@ a {
 a:hover {
     opacity: 1;
 }
+
+.leftrightbutton {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    display: flex;
+    column-gap: 90vw;
+}

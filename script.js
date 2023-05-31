@@ -101,13 +101,12 @@ document.querySelector('.try').appendChild(nav)
 //     changePicBack()
 // })
 const anchor = document.querySelectorAll('a')
-anchor.forEach(a=>{
-    
+anchor.forEach(a=>{  
     a.addEventListener('click',()=>{
         setTimeout(() => {
             const hash = document.location.hash
             console.log(hash) 
-        }, 0);  
+        }, 0)  
         anchor.forEach(other=>{
             if(other!==a){
                 other.style.backgroundColor= ''
@@ -115,5 +114,48 @@ anchor.forEach(a=>{
         })
         a.style.backgroundColor = 'black'
     })
+})
 
+const rightbutton = document.getElementById('right')
+const leftbutton = document.getElementById('left')
+
+function updateHash(newHash) {
+    window.location.hash = newHash;
+}
+const getHash = ()=>{
+    const hash = document.location.hash
+    return hash
+}
+function handleHashF(){
+    const hash = getHash()
+    const indexpic = hash.slice(-1)
+    let nextpic = parseInt(indexpic) +1
+    if (nextpic===6){
+        nextpic = 1
+    }
+    return nextpic
+}
+function handleHashB(){
+    const hash = getHash()
+    const indexpic = hash.slice(-1)
+    let nextpic = parseInt(indexpic) -1
+    if (nextpic===0){
+        nextpic = 5
+    }
+    return nextpic
+}
+
+updateHash(`#pic-1`)
+rightbutton.addEventListener('click',()=>{
+    const nextpic = handleHashF()
+    const pic = document.getElementById(`pic-${nextpic}`)
+    pic.scrollIntoView({ behavior: 'smooth' })
+    updateHash(`#pic${nextpic}`)
+})
+
+leftbutton.addEventListener('click',()=>{
+    const nextpic = handleHashB()
+    const pic = document.getElementById(`pic-${nextpic}`)
+    pic.scrollIntoView({ behavior: 'smooth' })
+    updateHash(`#pic${nextpic}`)
 })
