@@ -149,6 +149,8 @@ function handleHashB(){
 
 
 rightbutton.addEventListener('click',()=>{
+    clearInterval(timer)
+    timeFiveSec ()
     const nextpic = handleHashF()
     const pic = document.getElementById(`pic-${nextpic}`)
     pic.scrollIntoView({ behavior: 'smooth' })
@@ -165,6 +167,8 @@ rightbutton.addEventListener('click',()=>{
 })
 
 leftbutton.addEventListener('click',()=>{
+    clearInterval(timer)
+    timeFiveSec ()
     const nextpic = handleHashB()
     const pic = document.getElementById(`pic-${nextpic}`)
     pic.scrollIntoView({ behavior: 'smooth' })
@@ -179,6 +183,25 @@ leftbutton.addEventListener('click',()=>{
         }
     })
 })
+let timer
+function timeFiveSec ()  {
+    clearInterval(timer)
+    timer = setInterval(() => {
+        const nextpic = handleHashF()
+        const pic = document.getElementById(`pic-${nextpic}`)
+        pic.scrollIntoView({ behavior: 'smooth' })
+        updateHash(`#pic-${nextpic}`)
+    
+        anchor.forEach(a=>{
+            const hash = getHash()
+            if(a.hash!==hash){
+            a.style.backgroundColor= ''
+        }else {
+            a.style.backgroundColor = 'black'
+        }
+    })
+    }, 3000);
+}
 
 //flow
 updateHash(`#pic-1`)
@@ -190,3 +213,4 @@ anchor.forEach(a=>{
         a.style.backgroundColor = 'black'
     }
 })
+timeFiveSec()
