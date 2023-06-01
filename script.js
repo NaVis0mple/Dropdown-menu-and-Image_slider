@@ -104,7 +104,7 @@ const anchor = document.querySelectorAll('a')
 anchor.forEach(a=>{  
     a.addEventListener('click',()=>{
         setTimeout(() => {
-            const hash = document.location.hash
+            const hash = getHash()
             console.log(hash) 
         }, 0)  
         anchor.forEach(other=>{
@@ -122,7 +122,7 @@ const leftbutton = document.getElementById('left')
 function updateHash(newHash) {
     window.location.hash = newHash;
 }
-const getHash = ()=>{
+function getHash (){
     const hash = document.location.hash
     return hash
 }
@@ -145,17 +145,48 @@ function handleHashB(){
     return nextpic
 }
 
-updateHash(`#pic-1`)
+
+
+
 rightbutton.addEventListener('click',()=>{
     const nextpic = handleHashF()
     const pic = document.getElementById(`pic-${nextpic}`)
     pic.scrollIntoView({ behavior: 'smooth' })
-    updateHash(`#pic${nextpic}`)
+    updateHash(`#pic-${nextpic}`)
+    
+    anchor.forEach(a=>{
+        const hash = getHash()
+        if(a.hash!==hash){
+            a.style.backgroundColor= ''
+        }else {
+            a.style.backgroundColor = 'black'
+        }
+    })
 })
 
 leftbutton.addEventListener('click',()=>{
     const nextpic = handleHashB()
     const pic = document.getElementById(`pic-${nextpic}`)
     pic.scrollIntoView({ behavior: 'smooth' })
-    updateHash(`#pic${nextpic}`)
+    updateHash(`#pic-${nextpic}`)
+
+    anchor.forEach(a=>{
+        const hash = getHash()
+        if(a.hash!==hash){
+            a.style.backgroundColor= ''
+        }else {
+            a.style.backgroundColor = 'black'
+        }
+    })
+})
+
+//flow
+updateHash(`#pic-1`)
+anchor.forEach(a=>{
+    const hash = getHash()
+    if(a.hash!==hash){
+        a.style.backgroundColor= ''
+    }else {
+        a.style.backgroundColor = 'black'
+    }
 })
