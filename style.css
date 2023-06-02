@@ -50,45 +50,11 @@ nav {
     transition: background-color 0.3s ease-in-out;
 }
 
-/* slider */
-/* first try */
-/* img {
-    height: 400px;
-    width: 400px;
-    position: absolute;
-    z-index: 1;
-    opacity: 1;
-}
-
-.hide {
-    visibility: hidden;
-
-}
-
-.frame {
-    display: block;
-    position: relative;
-}
-
-.imgholder {
-    display: block;
-    position: relative;
-}
-
-.changepic {
-    z-index: 1000;
-    position: absolute;
-    top: 400px;
-}
-
-.forward {
-    left: 380px;
-} */
-
-/* second try without js */
+/* slider without js*/
 .bigholder {
     position: relative;
     margin: 0 auto;
+    max-width: 80vw;
 }
 
 .imgholder {
@@ -116,8 +82,8 @@ nav {
 }
 
 a {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: #9ca3af;
     opacity: 75%;
